@@ -38,7 +38,7 @@ func TestRun(t *testing.T) {
 // }
 
 func TestRunFg(t *testing.T) {
-	c := Command("echo", "Hello, world!").Run()
+	c := Command("echo", "Hello, world!").RunFg()
 	require.NoError(t, c.Error())
 }
 
