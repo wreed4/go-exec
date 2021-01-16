@@ -34,14 +34,11 @@ func main() {
 	p = p.Pipe(
 		exec.Command("grep", "aa$"),
 	)
-	fmt.Println(p, "\n\n-------------")
-
 	c = p.RunFg()
-	if c.IsError() {
-		fmt.Println("result:", c)
-		fmt.Println(c.Error())
-		fmt.Println(c.ProcessState.ExitCode())
-	}
-	fmt.Printf("out: '%s'\n", c.Out())
-	fmt.Printf("err: '%s'\n\n", c.Err())
+
+	fmt.Println()
+
+	echo := exec.Command("echo").Bake()
+	echo = echo("again").Bake()
+	echo("and again!!").RunFg()
 }
