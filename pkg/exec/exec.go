@@ -71,6 +71,7 @@ func (c *Cmd) Run() *Cmd {
 func (c *Cmd) RunFg() *Cmd {
 	c.Stdout = os.Stdout
 	c.Stderr = os.Stderr
+	c.Stdin = os.Stdin
 	return c.Run()
 }
 

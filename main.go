@@ -41,4 +41,6 @@ func main() {
 	echo := exec.Command("echo").Bake()
 	echo = echo("again").Bake()
 	echo("and again!!").RunFg()
+
+	exec.Command("cat").RunFg()
 }
